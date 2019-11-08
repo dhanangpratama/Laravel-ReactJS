@@ -4,18 +4,21 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Routes from './Routes';
 import { Provider } from 'react-redux';
-import store from './Store';
+import { store, persistor } from './Store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 class Main extends Component {
     render () {
         return (
             <Provider store={store}>
-                <BrowserRouter>
-                    <div>
-                        <Header />
-                        <Route component={Routes} />
-                    </div>
-                </BrowserRouter>
+                <PersistGate loading={null} persistor={persistor}>
+                    <BrowserRouter>
+                        <div>
+                            <Header />
+                            <Route component={Routes} />
+                        </div>
+                    </BrowserRouter>
+                </PersistGate>
             </Provider>
         )
     }
