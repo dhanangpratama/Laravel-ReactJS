@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 import validator from 'validator';
 import Swal from 'sweetalert2';
 
@@ -159,4 +160,11 @@ class Register extends Component {
     }
 }
 
-export default Register;
+const mapReduxStateToComponentProps = state => ({
+    app: state.app
+});
+
+export default connect(
+    mapReduxStateToComponentProps, 
+    null
+)(Register);

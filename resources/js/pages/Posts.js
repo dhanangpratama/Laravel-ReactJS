@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Posts extends Component {
     constructor () {
@@ -80,4 +81,11 @@ class Posts extends Component {
     }
 }
 
-export default Posts;
+const mapReduxStateToComponentProps = state => ({
+    app: state.app
+});
+
+export default connect(
+    mapReduxStateToComponentProps, 
+    null
+)(Posts);

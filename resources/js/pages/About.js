@@ -1,7 +1,5 @@
-import axios from 'axios'
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-
+import React, { Component } from 'react';
+import { connect } from "react-redux";
 class About extends Component {
     constructor () {
         super()
@@ -22,4 +20,11 @@ class About extends Component {
     }
 }
 
-export default About;
+const mapReduxStateToComponentProps = state => ({
+    app: state.app
+});
+
+export default connect(
+    mapReduxStateToComponentProps, 
+    null
+)(About);

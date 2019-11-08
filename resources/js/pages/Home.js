@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 import { Button, Spinner } from 'react-bootstrap';
 
 class Home extends Component {
@@ -63,6 +64,8 @@ class Home extends Component {
     componentDidMount() {
 
         this._jqueryScripts();
+
+        console.log(this.props.app);
         
     }
 
@@ -97,4 +100,11 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapReduxStateToComponentProps = state => ({
+    app: state.app
+});
+
+export default connect(
+    mapReduxStateToComponentProps, 
+    null
+)(Home);
