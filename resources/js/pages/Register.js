@@ -133,19 +133,19 @@ class Register extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="name">Name</label>
-                        <input type="text" name="name" className="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter name" autoComplete="off" value={this.state.name} onChange={this._nameChange} />
+                        <input type="text" name="name" className="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter name" autoComplete="off" value={this.state.name} onChange={this._nameChange} readOnly={this.state.loading} />
                         <small id="nameHelp" className="form-text text-muted">Please type your name.</small>
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="email">E-Mail</label>
-                        <input type="text" name="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter e-mail" autoComplete="off" value={this.state.email} onChange={this._emailChange} />
+                        <input type="text" name="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter e-mail" autoComplete="off" value={this.state.email} onChange={this._emailChange} readOnly={this.state.loading} />
                         <small id="emailHelp" className="form-text text-muted">Please type your valid e-mail.</small>
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
-                        <input type="password" name="password" className="form-control" id="password" aria-describedby="passwordHelp" placeholder="Enter password" autoComplete="off" value={this.state.password} onChange={this._passwordChange} />
+                        <input type="password" name="password" className="form-control" id="password" aria-describedby="passwordHelp" placeholder="Enter password" autoComplete="off" value={this.state.password} onChange={this._passwordChange} readOnly={this.state.loading} />
                         <small id="passwordHelp" className="form-text text-muted">Please type your secure password.</small>
                     </div>
                     
